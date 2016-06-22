@@ -1,7 +1,6 @@
 import urllib2
 
 def oracle(payload):
-    print payload
     response = urllib2.urlopen('https://id0-rsa.pub/problem/rsa_oracle/' + payload)
     return int(response.read(), 16)
 
