@@ -26,7 +26,6 @@ while True:
     for block in alphabet_blocks:
         responses, payloads = {}, {}
         modified_ciphertext = flip_cipher(ciphertext, known, count)
-        print modified_ciphertext
         for char in block:
             modified_ciphertext[16-count] = ciphertext[16-count] ^ ord(char) ^ count
             payloads[''.join([hex(symbol)[2:].zfill(2) for symbol in modified_ciphertext])] = char
